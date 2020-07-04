@@ -9,7 +9,7 @@
 
     <style name="SeekBarColor"
         parent="Widget.AppCompat.SeekBar">
-        <item name="colorAccent">#f8b214</item>
+        <item name="colorAccent">#FFFFFF</item>
     </style>
 
 </resources>
