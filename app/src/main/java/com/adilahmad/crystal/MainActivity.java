@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
             , REQUEST_CODE);
         }
         else {
-            Toast.makeText(this, "Permission Granted!", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this, "Permission Granted!", Toast.LENGTH_SHORT).show();
             musicFiles = getAllAudio(this);
             initViewPager();
         }

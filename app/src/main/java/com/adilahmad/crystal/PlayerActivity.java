@@ -26,7 +26,7 @@ import static com.adilahmad.crystal.MainActivity.shuffleBoolean;
 public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnCompletionListener {
 
     TextView song_name, artist_name, duration_played, duration_total;
-    ImageView cover_art, nextBtn, prevBtn, shuffleBtn, repeatBtn;
+    ImageView cover_art, nextBtn, prevBtn, shuffleBtn, repeatBtn, backBtn;
     FloatingActionButton playPauseBtn;
     SeekBar seekBar;
 
@@ -101,6 +101,13 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnC
                     repeatBoolean = true;
                     repeatBtn.setImageResource(R.drawable.ic_repeat_on);
                 }
+            }
+        });
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
             }
         });
     }
@@ -368,6 +375,7 @@ public class PlayerActivity extends AppCompatActivity implements MediaPlayer.OnC
         repeatBtn = findViewById(R.id.id_repeat);
         playPauseBtn = findViewById(R.id.play_pause);
         seekBar = findViewById(R.id.seekBar);
+        backBtn = findViewById(R.id.back_btn);
     }
 
     private void metaData(Uri uri) {
