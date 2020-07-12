@@ -12,6 +12,8 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -21,6 +23,8 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.MyHolder> {
     private Context mContext;
     private ArrayList<MusicFiles> albumFiles;
     View view;
+
+//    Set<String> albumSet = new HashSet<>();
 
     public AlbumAdapter(Context mContext, ArrayList<MusicFiles> albumFiles) {
         this.mContext = mContext;
@@ -36,6 +40,8 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.MyHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull MyHolder holder, final int position) {
+//        if(albumSet.contains(albumFiles.get(position).getAlbum()))  return;
+//        albumSet.add(albumFiles.get(position).getAlbum());
         holder.album_name.setText(albumFiles.get(position).getAlbum());
         byte[] image = getAlbumArt(albumFiles.get(position).getPath());
         if(image != null) {

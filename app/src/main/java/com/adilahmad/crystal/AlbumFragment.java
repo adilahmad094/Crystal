@@ -12,6 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridLayout;
 
+import static com.adilahmad.crystal.AlbumDetailsAdapter.albumFiles;
+import static com.adilahmad.crystal.MainActivity.albums;
 import static com.adilahmad.crystal.MainActivity.musicFiles;
 
 public class AlbumFragment extends Fragment {
@@ -29,8 +31,8 @@ public class AlbumFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_album, container, false);
         recyclerView = view.findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
-        if(!(musicFiles.size() < 1)) {
-            albumAdapter = new AlbumAdapter(getContext(), musicFiles);
+        if(!(albums.size() < 1)) {
+            albumAdapter = new AlbumAdapter(getContext(), albums);
             recyclerView.setAdapter(albumAdapter);
             recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
         }

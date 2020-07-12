@@ -19,7 +19,7 @@ import androidx.recyclerview.widget.RecyclerView;
 public class AlbumDetailsAdapter extends RecyclerView.Adapter<AlbumDetailsAdapter.MyHolder> {
 
     private Context mContext;
-    private ArrayList<MusicFiles> albumFiles;
+    static ArrayList<MusicFiles> albumFiles;
     View view;
 
     public AlbumDetailsAdapter(Context mContext, ArrayList<MusicFiles> albumFiles) {
@@ -49,6 +49,15 @@ public class AlbumDetailsAdapter extends RecyclerView.Adapter<AlbumDetailsAdapte
                     .load(R.drawable.notfound)
                     .into(holder.album_image);
         }
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(mContext, PlayerActivity.class);
+                intent.putExtra("sender", "albumDetails");
+                intent.putExtra("position", position);
+                mContext.startActivity(intent);
+            }
+        });
     }
 
     @Override
